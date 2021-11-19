@@ -1,8 +1,8 @@
-## Rails API built for Trillion Tech Solutions Coding Assessment
+# Rails API built for Trillion Tech Solutions Coding Assessment
 
 This API was built to fulfill the assessment requirement for Trillion Tech Solutions.
 
-# Assigned Task
+## Assigned Task
 
 IP Address Management REST API
 Create a simple IP Address Management REST API on top of any data store. It will include the ability to add IP Addresses by CIDR block and then either acquire or release IP addresses individually. Each IP address will have a status associated with it that is either “available” or “acquired”.
@@ -14,7 +14,7 @@ List IP addresses - return all IP addresses in the system with their current sta
 Acquire an IP - set the status of a certain IP to “acquired”
 Release an IP - set the status of a certain IP to “available”
 
-# Installation
+## Installation
 
 Please clone this repo to your local machine.
 
@@ -23,3 +23,11 @@ Run command
 ```
 bundle install
 ```
+
+to install dependencies and run
+
+```
+rails s
+```
+
+to start your server.
