@@ -10,15 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_19_163611) do
+ActiveRecord::Schema.define(version: 2021_11_19_164131) do
+
+  create_table "cidrblocks", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "ipaddresses", force: :cascade do |t|
     t.string "address"
     t.boolean "available?", default: true, null: false
-    t.integer "cidr_block_id"
+    t.integer "cidrblock_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["cidr_block_id"], name: "index_ipaddresses_on_cidr_block_id"
+    t.index ["cidrblock_id"], name: "index_ipaddresses_on_cidrblock_id"
   end
 
 end
