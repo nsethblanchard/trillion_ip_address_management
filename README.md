@@ -1,24 +1,25 @@
-# README
+## Rails API built for Trillion Tech Solutions Coding Assessment
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This API was built to fulfill the assessment requirement for Trillion Tech Solutions.
 
-Things you may want to cover:
+# Assigned Task
 
-* Ruby version
+IP Address Management REST API
+Create a simple IP Address Management REST API on top of any data store. It will include the ability to add IP Addresses by CIDR block and then either acquire or release IP addresses individually. Each IP address will have a status associated with it that is either “available” or “acquired”.
 
-* System dependencies
+The REST API must support four endpoint:
 
-* Configuration
+Create IP addresses - take in a CIDR block (e.g. 10.0.0.1/24) and add all IP addresses within that block to the data store with status “available”
+List IP addresses - return all IP addresses in the system with their current status
+Acquire an IP - set the status of a certain IP to “acquired”
+Release an IP - set the status of a certain IP to “available”
 
-* Database creation
+# Installation
 
-* Database initialization
+Please clone this repo to your local machine.
 
-* How to run the test suite
+Run command
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+bundle install
+```
