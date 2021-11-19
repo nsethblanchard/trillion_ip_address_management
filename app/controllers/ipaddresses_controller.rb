@@ -1,5 +1,6 @@
 class IpaddressesController < ApplicationController
   before_action :set_ipaddress, only: [:show, :update, :destroy]
+  before_action :get_cidrblock
 
   # GET /ipaddresses
   def index
@@ -12,9 +13,13 @@ class IpaddressesController < ApplicationController
     render json: @ipaddress
   end
 
+  def new
+    @ipaddress = @cidrblock.ipaddresses.build
+  end
+
   # POST /ipaddresses
   def create
-    @ipaddress = Ipaddress.new(ipaddress_params)
+    @ipaddress = @cidrblock.ipaddresses.build(ipaddress_params)
 
     if @ipaddress.save
       render json: @ipaddress, status: :created, location: @ipaddress
@@ -41,6 +46,10 @@ class IpaddressesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_ipaddress
       @ipaddress = Ipaddress.find(params[:id])
+    end
+
+    def get_cidrblock 
+      @cidrblock = Cidrblock.find(params[:cidrblock_id])
     end
 
     # Only allow a list of trusted parameters through.

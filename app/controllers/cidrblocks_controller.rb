@@ -8,6 +8,10 @@ class CidrblocksController < ApplicationController
     render json: @cidrblocks
   end
 
+  # def new
+  #   @cidrblock = IPAddress.parse(cidrblock_params)
+  # end
+
   # GET /cidrblocks/1
   def show
     render json: @cidrblock
@@ -15,7 +19,8 @@ class CidrblocksController < ApplicationController
 
   # POST /cidrblocks
   def create
-    @cidrblock = Cidrblock.new(cidrblock_params)
+    @enteredblock = IPAddress.parse(cidrblock_params)
+    @cidrblock = Cidrblock.new(@enteredblock)
 
     if @cidrblock.save
       render json: @cidrblock, status: :created, location: @cidrblock

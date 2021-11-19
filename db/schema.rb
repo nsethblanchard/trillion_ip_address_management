@@ -27,4 +27,5 @@ ActiveRecord::Schema.define(version: 2021_11_19_164131) do
     t.index ["cidrblock_id"], name: "index_ipaddresses_on_cidrblock_id"
   end
 
+  add_foreign_key "ipaddresses", "cidrblocks"
 end
