@@ -4,7 +4,6 @@ class IpaddressesController < ApplicationController
   # GET /ipaddresses
   def index
     @ipaddresses = Ipaddress.all
-
     render json: @ipaddresses
   end
 
@@ -46,6 +45,6 @@ class IpaddressesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def ipaddress_params
-      params.fetch(:ipaddress, {})
+      params.require(:ipaddress).permit(:address, :acquired?, :cidrblock_id)
     end
 end

@@ -1,3 +1,3 @@
 class Cidrblock < ApplicationRecord
-    has_many: :ipaddresses, dependent: :destroy
+    has_many :ipaddresses, dependent: :destroy
 end

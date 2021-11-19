@@ -1,3 +1,3 @@
 class Ipaddress < ApplicationRecord
-    belongs_to: :cidrblock
+    belongs_to :cidrblock
 end

@@ -39,12 +39,12 @@ class CidrblocksController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+    
     def set_cidrblock
       @cidrblock = Cidrblock.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
+    
     def cidrblock_params
       params.fetch(:cidrblock, {})
     end
