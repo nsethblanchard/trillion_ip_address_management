@@ -24,7 +24,7 @@ class CidrblocksController < ApplicationController
     if @cidrblock.save
       block = IPAddress::IPv4.new @cidrblock.name
       block.each_host do |host|
-          Address.create(address:host, block_id:@cidrblock.id)
+          Ipaddress.create(address:host, block_id:@cidrblock.id)
       end
       
       render json: @cidrblock, status: :created, location: @cidrblock
